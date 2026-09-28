@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Steady — burnout prevention and sustainable performance for high-pressure teams.">
-  <title>Steady — Burnout prevention for high-pressure teams · V33</title>
+  <title>Steady — Burnout prevention for high-pressure teams · V34</title>
   <style>
     :root {
       --ink:#111216;
@@ -343,16 +343,9 @@
     }
     .cta-panel .h2 { max-width:950px; }
     .cta-panel p { max-width:650px; font-size:20px; color:#4f5359; line-height:1.5; }
-    .contact-form {
-      margin-top:42px; display:grid; grid-template-columns:1fr 1fr auto; gap:10px; max-width:880px;
+    .contact-actions {
+      margin-top:42px; display:flex; justify-content:flex-start;
     }
-    .contact-form input {
-      width:100%; border:1px solid rgba(17,18,22,.14); border-radius:999px; padding:15px 18px;
-      background:rgba(255,255,255,.72); outline:none; min-height:52px;
-    }
-    .contact-form input:focus { border-color:rgba(17,18,22,.42); background:white; }
-    .contact-form button { border:0; }
-    .form-note { font-size:12px; color:#686c72; margin-top:12px; min-height:18px; }
 
     footer { padding:34px 0 42px; }
     .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; color:#777b82; font-size:12px; }
@@ -411,7 +404,6 @@
       .proof-grid { grid-template-columns:1fr 1fr; }
       .founders { grid-template-columns:1fr; }
       .founder-card { min-height:0; }
-      .contact-form { grid-template-columns:1fr; }
     }
 
     @media (max-width: 560px) {
@@ -1121,7 +1113,7 @@
         <a href="#session">How</a>
         <a href="#about">Who</a>
         <a href="#faq">FAQ</a>
-        <a class="nav-cta" href="#contact">Book a conversation</a>
+        <a class="nav-cta" href="mailto:hello@steadywork.uk">Book a conversation</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -1138,7 +1130,7 @@
             <h1 class="display">Burnout prevention.<br><span class="soft">Sustainable performance.</span></h1>
             <p class="hero-sub">Steady helps people recognise stress earlier, self-regulate under pressure and build ways of working that can last.</p>
             <div class="actions">
-              <a href="#contact" class="btn btn-primary">Book a conversation <span class="arrow">↗</span></a>
+              <a href="mailto:hello@steadywork.uk" class="btn btn-primary">Book a conversation <span class="arrow">↗</span></a>
               <a href="#approach" class="btn btn-secondary">Explore our approach <span class="arrow">↓</span></a>
             </div>
           </div>
@@ -1394,12 +1386,9 @@
         <div class="eyebrow">Start a conversation</div>
         <h2 class="h2">Build a team that can sustain the pace.</h2>
         <p>Tell us a little about your team and the pressure you're trying to solve. We'll start with a conversation and work out whether Steady is the right fit.</p>
-        <form class="contact-form" id="contactForm">
-          <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
-          <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
-          <button class="btn nav-cta" type="submit">Book a conversation ↗</button>
-        </form>
-        <div class="form-note" id="formNote">Contact routing is a placeholder in this prototype.</div>
+        <div class="contact-actions">
+          <a class="btn nav-cta" href="mailto:hello@steadywork.uk">Book a conversation ↗</a>
+        </div>
       </section>
     </div>
   </main>
@@ -1443,15 +1432,6 @@
     }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const form = document.getElementById('contactForm');
-    const note = document.getElementById('formNote');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      note.textContent = "Prototype only — we'll connect this to your chosen email or booking flow before launch.";
-      note.style.fontWeight = '650';
-      form.querySelector('button').textContent = 'Ready to connect';
-    });
 
     // V2 hero carousel — five approved images, 4.8s cadence.
     const carousel = document.getElementById('heroCarousel');
